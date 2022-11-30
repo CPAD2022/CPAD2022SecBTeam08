@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "53410056238",
+    "project_id": "fir-auth-a0577",
+    "storage_bucket": "fir-auth-a0577.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:53410056238:android:7029800187eb7532ea77bf",
+        "android_client_info": {
+          "package_name": "com.mycompany.fireflowauthentication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "53410056238-idirq0fv7sni5pu9qv2j5qknlqpfsin4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mycompany.fireflowauthentication",
+            "certificate_hash": "9bbb3186b2189ef16d8f272bdab59362c395cbb4"
+          }
+        },
+        {
+          "client_id": "53410056238-sq2mfp7hj9cui0c6gld65nv19i0bqma4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCdIIIoCPetm5YVS351mWKV7LIgyx5pFCI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "53410056238-sq2mfp7hj9cui0c6gld65nv19i0bqma4.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "53410056238-ce7fv4qhvu54cl8tevgt7cefkl1vr0is.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.mycompany.fireflowauthentication"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
