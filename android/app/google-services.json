@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "147332287440",
+    "project_id": "shakti-database-3593a",
+    "storage_bucket": "shakti-database-3593a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:147332287440:android:d5c1165ffbbda251f007d5",
+        "android_client_info": {
+          "package_name": "com.example.shakti"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "147332287440-mvlnqdgh73sna4jmpupm8f54lll87jah.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD53DV91o-Tk1f5QPaF_PSsgeWa3AU19FU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "147332287440-mvlnqdgh73sna4jmpupm8f54lll87jah.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "147332287440-rtt048cbq2rvffnam151gfa1t57c69qd.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.shakti"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
