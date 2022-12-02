@@ -4,7 +4,6 @@ import 'package:shakti/db/shared_preferences.dart';
 import 'package:shakti/home_screen.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:shakti/utils/constants.dart';
-import 'package:shakti/widgets/HomePage.dart';
 import 'package:shakti/widgets/WelcomePage.dart';
 import 'package:shakti/widgets/login_screen.dart';
 
@@ -22,7 +21,7 @@ class MyApp extends StatelessWidget {
 
   // This widget is the root of your application.
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context){
     return MaterialApp(
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
@@ -30,14 +29,14 @@ class MyApp extends StatelessWidget {
          textTheme: GoogleFonts.firaSansTextTheme(
           Theme.of(context).textTheme,
         ),
-        scaffoldBackgroundColor: Color.fromARGB(255, 198, 156, 241),
+        scaffoldBackgroundColor: Color.fromARGB(255, 191, 175, 207),
         primarySwatch: Colors.blue,
       ),
       home: FutureBuilder(
         future: MySharedPrefference.getUserEmail(),
         builder:  (BuildContext context, AsyncSnapshot snapshot){
           if (snapshot.data == "") {
-            return HomeScreen();
+            return WelcomeScreen();
           }
           if (snapshot.data != null) {
             return HomeScreen();

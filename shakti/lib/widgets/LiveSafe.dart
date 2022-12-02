@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:shakti/widgets/live_safe/EmergencyCalls.dart';
+import 'package:shakti/widgets/live_safe/ShakeYourPhone.dart';
+import 'package:shakti/widgets/live_safe/TaxiBookingCard.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import 'live_safe/BusStationCard.dart';
@@ -30,10 +33,13 @@ class LiveSafe extends StatelessWidget {
         physics: BouncingScrollPhysics(),
         scrollDirection: Axis.horizontal,
         children: [
+          SOSCard(),
+          ShakePhoneCard(),
           PoliceStationCard(onMapFunction: openMap),
           HospitalCard(onMapFunction: openMap),
           PharmacyCard(onMapFunction: openMap),
           BusStationCard(onMapFunction: openMap),
+          BookTaxi(),
         ],
       ),
     );

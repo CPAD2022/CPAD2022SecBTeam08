@@ -3,6 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:shakti/widgets/Social_login.dart';
 import 'package:shakti/widgets/login_screen.dart';
 // import 'package:women_safety_app/model/user_model.dart';
 import 'package:shakti/utils/constants.dart';
@@ -86,7 +87,7 @@ class _RegisterNewUserState extends State<RegisterNewUser> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      resizeToAvoidBottomInset: false,
+      resizeToAvoidBottomInset: true,
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 10),
@@ -119,7 +120,7 @@ class _RegisterNewUserState extends State<RegisterNewUser> {
                             ),
                           ),
                           Container(
-                            height: MediaQuery.of(context).size.height * 0.75,
+                            height: MediaQuery.of(context).size.height * 0.5,
                             child: Form(
                               key: _formKey,
                               child: Column(
@@ -227,7 +228,7 @@ class _RegisterNewUserState extends State<RegisterNewUser> {
                                         if (_formKey.currentState!.validate()) {
                                           _onSubmit();
                                         }
-                                      }),
+                                      }),    
                                 ],
                               ),
                             ),
@@ -237,6 +238,7 @@ class _RegisterNewUserState extends State<RegisterNewUser> {
                               onPressed: () {
                                 goTo(context, LoginScreen());
                               }),
+                          SocalSignUp(),
                         ],
                       ),
                     ),

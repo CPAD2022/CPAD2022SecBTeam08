@@ -26,9 +26,9 @@ class FirebrigadeEmergency extends StatelessWidget {
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
                   colors: [
-                    Color(0xFFFD8080),
-                    Color(0xFFFB8580),
-                    Color(0xFFFBD079),
+                     Color.fromARGB(255, 217, 42, 176),
+                    Color.fromARGB(255, 82, 16, 62),
+                    Color.fromARGB(255, 154, 28, 145),
                   ],
                 )),
             child: Padding(

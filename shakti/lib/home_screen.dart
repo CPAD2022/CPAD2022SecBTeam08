@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:shakti/widgets/CustomAppBar.dart';
 import 'package:shakti/widgets/CustomCarousel.dart';
+import 'package:shakti/widgets/components/primaryButton.dart';
 import 'package:shakti/widgets/emergency.dart';
 import 'package:shakti/widgets/LiveSafe.dart';
 import 'package:shakti/widgets/safehome/SafeHome.dart';

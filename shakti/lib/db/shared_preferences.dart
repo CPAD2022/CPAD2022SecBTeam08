@@ -13,6 +13,8 @@ class MySharedPrefference {
     return await _preferences!.setString(key, cemail);
   }
 
+  
+
   static Future<String>? getUserEmail() async =>
       await _preferences!.getString(key) ?? "";
 }

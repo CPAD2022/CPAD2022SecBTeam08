@@ -17,11 +17,16 @@ class CustomAppBar extends StatelessWidget {
         onTap!();
       },
       child: Container(
-        child: Text(
-          sweetSayings[quoteIndex!],
-          style: TextStyle(
-            fontSize: 22,
-          ),
+        child: Column(
+          children: [
+            Text(
+              sweetSayings[quoteIndex!],
+              style: TextStyle(
+                fontSize: 22,
+                backgroundColor: Color.fromARGB(0, 108, 13, 79)
+              ),
+            ),
+          ],
         ),
       ),
     );
