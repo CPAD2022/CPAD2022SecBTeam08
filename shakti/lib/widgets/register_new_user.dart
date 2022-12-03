@@ -142,21 +142,21 @@ class _RegisterNewUserState extends State<RegisterNewUser> {
                                       return null;
                                     },
                                   ),
-                                  CustomTextField(
-                                    hintText: 'enter phone',
-                                    textInputAction: TextInputAction.next,
-                                    keyboardtype: TextInputType.phone,
-                                    prefix: Icon(Icons.phone),
-                                    onsave: (phone) {
-                                      _formData['phone'] = phone ?? "";
-                                    },
-                                    validate: (email) {
-                                      if (email!.isEmpty || email.length < 10) {
-                                        return 'enter correct phone';
-                                      }
-                                      return null;
-                                    },
-                                  ),
+                                  // CustomTextField(
+                                  //   hintText: 'enter phone',
+                                  //   textInputAction: TextInputAction.next,
+                                  //   keyboardtype: TextInputType.phone,
+                                  //   prefix: Icon(Icons.phone),
+                                  //   onsave: (phone) {
+                                  //     _formData['phone'] = phone ?? "";
+                                  //   },
+                                  //   validate: (email) {
+                                  //     if (email!.isEmpty || email.length < 10) {
+                                  //       return 'enter correct phone';
+                                  //     }
+                                  //     return null;
+                                  //   },
+                                  // ),
                                   CustomTextField(
                                     hintText: 'enter email',
                                     textInputAction: TextInputAction.next,

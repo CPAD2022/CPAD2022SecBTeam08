@@ -1,5 +1,7 @@
 
 import 'package:flutter/material.dart';
+import 'package:shakti/home_screen.dart';
+import 'package:shakti/utils/constants.dart';
 import 'package:shakti/widgets/Google_SignIn.dart';
 import 'package:shakti/widgets/components/or_divider.dart';
 import 'package:shakti/widgets/components/social_icon.dart';
@@ -31,7 +33,9 @@ class SocalSignUp extends StatelessWidget {
             SocalIcon(
               iconSrc: "assets/icons/google-plus.svg",
               press: () {
-                AuthService().signInWithGoogle();
+                AuthService.signInWithGoogle().then((value) =>
+                  goTo(context, HomeScreen())
+                   );
               },
             ),
           ],

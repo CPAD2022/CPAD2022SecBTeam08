@@ -3,51 +3,35 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_sms/flutter_sms.dart';
 import 'package:geocoder2/geocoder2.dart';
+import 'package:geocoding/geocoding.dart';
 
 import 'package:geolocator/geolocator.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class SafeHome extends StatelessWidget {
-  void _sendSMS(String message, List<String> recipents) async {
+  static void _sendSMS(String message, List<String> recipents) async {
   String _result = await sendSMS(message: message, recipients: recipents)
       .catchError((onError) {
     print(onError);
   });
   print(_result);
 }
-
-  sendMessage() async {
-     LocationPermission permission;
+static Function sendMessage= () async {
+   LocationPermission permission;
    permission = await Geolocator.requestPermission();
-    var position =  await Geolocator.getCurrentPosition(desiredAccuracy: LocationAccuracy.high);
-    var addresses =
-        await Geocoder2.getDataFromCoordinates(
-        latitude: position.latitude,
-        longitude: position.longitude,
-        googleMapApiKey: "GOOGLE_MAP_API_KEY");
-    print('${addresses.address} : ${addresses.city}');
-    var message =
-        "Help! I'm in an emergency. I'm at (${addresses.address}, ${addresses.city}).";
+    var position = await Geolocator.getCurrentPosition(desiredAccuracy: LocationAccuracy.high);
     var recipents = <String>['7995939215'];
+    List<Placemark> placemarks = await placemarkFromCoordinates(
+        position.latitude,
+        position.longitude
+      );
+    Placemark place = placemarks[0];
+    _sendSMS("Hi, I am here ${place.name}, ${place.street},${place.subLocality},${place.locality}, ${place.country},${place.postalCode}", recipents);
+  };
 
-    _sendSMS(message, recipents);
-  }
   
-  showModelSafeHome(BuildContext context) {
-    showModalBottomSheet(
-      context: context,
-      builder: (context) {
-        return Container(
-          height: MediaQuery.of(context).size.height / 1.4,
-          decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(30),
-                topRight: Radius.circular(30),
-              )),
-        );
-      },
-    );
-  }
+  
+  
 
   @override
   Widget build(BuildContext context) {

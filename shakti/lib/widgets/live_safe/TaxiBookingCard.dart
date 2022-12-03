@@ -20,11 +20,10 @@ class BookTaxi extends StatelessWidget {
         position.longitude.toString() +
         '&category=compact&utm_source=12343&drop_lat=28682640&drop_lng=77.370486&dsw=yes';
 
-    if (await canLaunch(url)) {
-      await launch(url);
-    } else {
-      throw 'Could not launch $url';
-    }
+    if (!await launchUrl(Uri.parse(url),
+                mode: LaunchMode.externalApplication)) {
+              throw 'Could not launch ';
+            }
   };
 
   @override

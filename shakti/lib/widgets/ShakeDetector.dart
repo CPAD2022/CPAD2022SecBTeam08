@@ -2,6 +2,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_sms/flutter_sms.dart';
 import 'package:shake/shake.dart';
+import 'package:url_launcher/url_launcher.dart';
+import 'package:geocoder2/geocoder2.dart';
+import 'package:geocoding/geocoding.dart';
+import 'package:geolocator/geolocator.dart';
 
 class ShakeDetected extends StatefulWidget {
   const ShakeDetected({super.key});
@@ -28,7 +32,16 @@ class _ShakeDetectedState extends State<ShakeDetected> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    detector = ShakeDetector.autoStart(onPhoneShake: (){
+    detector = ShakeDetector.autoStart(onPhoneShake: () async {
+      LocationPermission permission;
+   permission = await Geolocator.requestPermission();
+    var position = await Geolocator.getCurrentPosition(desiredAccuracy: LocationAccuracy.high);
+    var recipents = <String>['7995939215'];
+    List<Placemark> placemarks = await placemarkFromCoordinates(
+        position.latitude,
+        position.longitude
+      );
+    Placemark place = placemarks[0];
       _sendSMS("Hi, I am at this location", receipients);
     });
     

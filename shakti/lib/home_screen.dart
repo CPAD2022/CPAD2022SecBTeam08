@@ -1,9 +1,11 @@
 import 'dart:math';
 
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:shakti/widgets/CustomAppBar.dart';
 import 'package:shakti/widgets/CustomCarousel.dart';
+import 'package:shakti/widgets/WelcomePage.dart';
 import 'package:shakti/widgets/components/primaryButton.dart';
 import 'package:shakti/widgets/emergency.dart';
 import 'package:shakti/widgets/LiveSafe.dart';
@@ -17,7 +19,21 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   //const HomeScreen({super.key});
   int qindex=3;
+  
+  final FirebaseAuth auth = FirebaseAuth.instance;
 
+  //signout function
+
+  signOut() async {
+
+    await auth.signOut();
+
+    Navigator.pushReplacement(
+
+        context, MaterialPageRoute(builder: (context) => WelcomeScreen()));
+
+  }
+  
   getQuoteIndex(){
     Random random=Random();
     setState(() {
@@ -71,6 +87,15 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                     LiveSafe(),
                     SafeHome(),
+                    PrimaryButton(
+
+                      title: "signout",
+
+                      onPressed: () {
+
+                        signOut();
+
+                      })
                    ],
                 ),
               ),
